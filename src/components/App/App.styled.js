@@ -6,4 +6,5 @@ export const AppBox = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 40px;
+  line-height: 60px;
 `;
