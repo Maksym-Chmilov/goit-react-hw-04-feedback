@@ -20,19 +20,39 @@ export const App = () => {
       : Math.round((good / countTotalFeedback()) * 100);
   };
 
+  // const handleLeaveFeedback = e => {
+  //   switch (e.target.textContent) {
+  //     case 'good':
+  //       setGood(good + 1);
+  //       break;
+  //     case 'neutral':
+  //       setNeutral(neutral + 1);
+  //       break;
+  //     case 'bad':
+  //       setBad(bad + 1);
+  //       break;
+  //     default:
+  //       return;
+  //   }
+  // };
+
   const handleLeaveFeedback = e => {
-    switch (e.target.textContent) {
-      case 'good':
-        setGood(good + 1);
-        break;
-      case 'neutral':
-        setNeutral(neutral + 1);
-        break;
-      case 'bad':
-        setBad(bad + 1);
-        break;
-      default:
-        return;
+    const clickResult = e.target.textContent;
+
+    if (clickResult === 'good') {
+      setGood(prevState => {
+        return prevState + 1;
+      });
+    }
+    if (clickResult === 'neutral') {
+      setNeutral(prevState => {
+        return prevState + 1;
+      });
+    }
+    if (clickResult === 'bad') {
+      setBad(prevState => {
+        return prevState + 1;
+      });
     }
   };
 
